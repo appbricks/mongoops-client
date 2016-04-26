@@ -4,6 +4,7 @@ jdk:
 before_install:
 - openssl aes-256-cbc -K $encrypted_07f836baf81a_key -iv $encrypted_07f836baf81a_iv
   -in environment.tar.enc -out environment.tar -d
+- tar xvf environment.tar
 script:
 - "./gradlew test"
 after_success:
