@@ -24,7 +24,7 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 
 description = 'Mongo Operations Manager client API library'
-archivesBaseName = "mongoopsclient"
+archivesBaseName = "mongoops-client"
 
 group 'org.appbricks'
 version '1.0.0-SNAPSHOT'
