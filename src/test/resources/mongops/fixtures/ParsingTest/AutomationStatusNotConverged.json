@@ -1,0 +1,17 @@
+{
+  "goalVersion": 29,
+  "processes": [
+    {
+      "hostname": "AGENT_HOST_0",
+      "name": "BLUE_0",
+      "lastGoalVersionAchieved": 28,
+      "plan": ["Download", "Start", "WaitRsInit"]
+    },
+    {
+      "hostname": "AGENT_HOST_1",
+      "name": "BLUE_1",
+      "lastGoalVersionAchieved": 29,
+      "plan": []
+    }
+  ]
+}

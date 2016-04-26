@@ -1,0 +1,23 @@
+{
+  "goalVersion" : 18,
+  "processes" : [
+    {
+      "hostname" : "mongo-rs-h1.localdomain",
+      "lastGoalVersionAchieved" : 18,
+      "name" : "vcloud-rs-1_2",
+      "plan" : [ ]
+    },
+    {
+      "hostname" : "mongo-rs-h2.localdomain",
+      "lastGoalVersionAchieved" : 15,
+      "name" : "vcloud-rs-1_2",
+      "plan" : [ ]
+    },
+    {
+      "hostname" : "mongo-rs-h3.localdomain",
+      "lastGoalVersionAchieved" : 18,
+      "name" : "vcloud-rs-1_3",
+      "plan" : [ ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+'{'
+  "goalVersion":9,
+  "processes":[
+    '{'
+      "hostname":"mongo-agent-az1-medium-3.localdomain",
+      "lastGoalVersionAchieved":9,
+      "name":"MongoDB_Instance_1_0",
+      "plan":[
+
+      ]
+    '}',
+    '{'
+      "hostname":"mongo-agent-az2-medium-2.localdomain",
+      "lastGoalVersionAchieved":9,
+      "name":"MongoDB_Instance_1_1",
+      "plan":[
+
+      ]
+    '}',
+    '{'
+      "hostname":"mongo-agent-az1-medium-1.localdomain",
+      "lastGoalVersionAchieved":9,
+      "name":"MongoDB_Instance_1_2",
+      "plan":[
+
+      ]
+    '}'
+  ]
+'}'

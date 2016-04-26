@@ -1,0 +1,13 @@
+'{'
+  "id":"56556bf6e4b05351c706efd4",
+  "username":"testuser@somedomain.com",
+  "emailAddress":"testuser@somedomain.com",
+  "firstName":"Test",
+  "lastName":"User",
+  "roles":[
+    '{'
+      "groupId":"GROUP_ID",
+      "roleName":"GROUP_READ_ONLY"
+    '}'
+  ]
+'}'

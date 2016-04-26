@@ -1,0 +1,41 @@
+{
+  "net": {
+    "http": {
+      "RESTInterfaceEnabled": false,
+      "enabled": false
+    }
+  },
+  "storage": {
+    "directoryPerDB": true,
+    "engine": "wiredTiger",
+    "wiredTiger": {
+      "collectionConfig": {
+        "blockCompressor": "snappy"
+      },
+      "engineConfig": {
+        "directoryForIndexes": true,
+        "journalCompressor": "snappy"
+      },
+      "indexConfig": {
+        "prefixCompression": true
+      }
+    }
+  },
+  "systemLog": {
+    "destination": "file",
+    "logAppend": true,
+    "logRotate": "rename"
+  },
+  "replication": {
+    "oplogSizeMB": 10240
+  },
+  "operationProfiling": {},
+  "auditLog": {
+    "destination": "file",
+    "filter": "{ atype: { $in: [\"authCheck\", \"replSetReconfig\", \"shutdown\", \"dropDatabase\", \"createUser\", \"dropUser\", \"dropAllUsersFromDatabase\", \"updateUser\", \"grantRolesToUser\", \"revokeRolesFromUser\", \"createRole\", \"updateRole\", \"dropRole\", \"dropAllRolesFromDatabase\", \"grantRolesToRole\", \"revokeRolesFromRole\", \"grantPrivilegesToRole\", \"revokePrivilegesFromRole\", \"enableSharding\", \"shardCollection\", \"addShard\", \"removeShard\", \"dropCollection\", \"renameCollection\", \"dropIndex\",\"createIndex\",\"createDatabase\" ] } }",
+    "format": "BSON"
+  },
+  "processManagement": {
+    "fork": true
+  }
+}

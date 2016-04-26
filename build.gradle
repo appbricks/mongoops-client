@@ -1,0 +1,138 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://repo.spring.io/release' }
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://repo.spring.io/release/" }
+    maven { url "https://repo.spring.io/snapshot/" }
+    maven { url "https://repo.spring.io/libs-release/" }
+    maven { url "https://repo.spring.io/libs-snapshot/" }
+    maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+description = 'Mongo Operations Manager client API library'
+archivesBaseName = "mongoopsclient"
+
+group 'org.appbricks'
+version '1.0.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    springBootVersion = '1.3.2.RELEASE'
+    springCloudConnectorVersion = '1.2.1.RELEASE'
+    httpClientVersion = '4.5.2'
+    mongodbVersion = '3.1.1'
+    jsonAssertVersion = '1.2.3'
+    mockitoVersion = '1.10.19'
+    assertJVersion = '3.3.0'
+    jsonPathVersion = '2.2.0'
+}
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+    // Spring Boot Starters
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-cloud-connectors:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-mail:${springBootVersion}")
+
+    // Cloud Connectors
+    compile("org.springframework.cloud:spring-cloud-cloudfoundry-connector:${springCloudConnectorVersion}")
+    compile("org.springframework.cloud:spring-cloud-spring-service-connector:${springCloudConnectorVersion}")
+
+    // Http Client
+    compile("org.apache.httpcomponents:httpclient:${httpClientVersion}")
+
+    // Mongo Client
+    compile("org.mongodb:mongo-java-driver:${mongodbVersion}")
+
+    // Json Assertion framework
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    testCompile("org.mockito:mockito-core:${mockitoVersion}")
+    testCompile("org.assertj:assertj-core:${assertJVersion}")
+    testCompile("org.skyscreamer:jsonassert:${jsonAssertVersion}")
+    testCompile("com.jayway.jsonpath:json-path:${jsonPathVersion}")
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+signing {
+    sign configurations.archives
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'MongoOps Client Project'
+                packaging 'jar'
+                description 'Mongo Operations Manager client API library.'
+                url 'https://github.com/appbricks/mongoops-client.git'
+
+                scm {
+                    connection 'https://github.com/appbricks/mongoops-client.git'
+                    developerConnection 'https://github.com/appbricks/mongoops-client.git'
+                    url 'https://github.com/appbricks/mongoops-client.git'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'mevansam'
+                        name 'Mevan Samaratunga'
+                        email 'mevansam@gmail.com'
+                    }
+                }
+            }
+        }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "2.12"
+}

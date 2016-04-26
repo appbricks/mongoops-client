@@ -1,0 +1,43 @@
+{
+  "links": [
+    {
+      "href": "https://mongo-ops-host.some-domain.com/api/public/v1.0/groups/GROUP_ID/agents/MONITORING?null&pageNum=1&itemsPerPage=100",
+      "rel": "self"
+    }
+  ],
+  "results": [
+    {
+      "confCount": 59,
+      "hostname": "example",
+      "isManaged": true,
+      "lastConf": "2015-06-18T14:21:42Z",
+      "lastPing": "2015-06-18T14:21:42Z",
+      "pingCount": 6,
+      "stateName": "ACTIVE",
+      "typeName": "MONITORING"
+    },
+    {
+      "confCount": 12,
+      "hostname": "example",
+      "isManaged": true,
+      "lastConf": "2015-06-18T14:26:29Z",
+      "stateName": "ACTIVE",
+      "typeName": "BACKUP"
+    },
+    {
+      "confCount": 141,
+      "hostname": "example-1",
+      "lastConf": "2015-06-18T14:27:42Z",
+      "stateName": "ACTIVE",
+      "typeName": "AUTOMATION"
+    },
+    {
+      "confCount": 353,
+      "hostname": "example",
+      "lastConf": "2015-06-18T14:27:37Z",
+      "stateName": "ACTIVE",
+      "typeName": "AUTOMATION"
+    }
+  ],
+  "totalCount": 4
+}

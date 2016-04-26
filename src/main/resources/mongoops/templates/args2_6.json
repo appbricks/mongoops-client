@@ -1,0 +1,36 @@
+{
+  "net": {
+    "http": {
+      "RESTInterfaceEnabled": false,
+      "enabled": false
+    }
+  },
+  "storage": {
+    "directoryPerDB": true,
+    "engine": "wiredTiger",
+    "wiredTiger": {
+      "collectionConfig": {
+        "blockCompressor": "snappy"
+      },
+      "engineConfig": {
+        "directoryForIndexes": true,
+        "journalCompressor": "snappy"
+      },
+      "indexConfig": {
+        "prefixCompression": true
+      }
+    }
+  },
+  "systemLog": {
+    "destination": "file",
+    "logAppend": true,
+    "logRotate": "rename"
+  },
+  "replication": {
+    "oplogSizeMB": 10240
+  },
+  "operationProfiling": {},
+  "processManagement": {
+    "fork": true
+  }
+}

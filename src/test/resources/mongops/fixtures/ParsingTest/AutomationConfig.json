@@ -1,0 +1,191 @@
+{
+  "monitoringVersions": [
+    {
+      "hostname": "one.example.net",
+      "logPath": "/var/log/mongodb-mms-automation/monitoring-agent.log",
+      "logRotate": {
+        "sizeThresholdMB": 1000,
+        "timeThresholdHrs": 24
+      }
+    }
+  ],
+  "backupVersions": [
+    {
+      "hostname": "one.example.net",
+      "logPath": "/var/log/mongodb-mms-automation/backup-agent.log",
+      "logRotate": {
+        "sizeThresholdMB": 1000,
+        "timeThresholdHrs": 24
+      }
+    }
+  ],
+  "processes": [
+    {
+      "name": "MyCLUSTER_MySHARD_0_0",
+      "processType": "mongod",
+      "version": "2.6.7",
+      "hostname": "testAutoAPI-0.dns.placeholder",
+      "logRotate": {
+        "sizeThresholdMB": 1000,
+        "timeThresholdHrs": 24
+      },
+      "authSchemaVersion": 1,
+      "args2_6": {
+        "net": {
+          "port": 27017
+        },
+        "storage": {
+          "dbPath": "/data/MyCLUSTER_MySHARD_0_0"
+        },
+        "systemLog": {
+          "path": "/data/MyCLUSTER_MySHARD_0_0/mongodb.log",
+          "destination": "file"
+        },
+        "replication": {
+          "replSetName": "MySHARD_0"
+        },
+        "operationProfiling": {}
+      }
+    },
+    {
+      "name": "MyCLUSTER_MyCONFIG_SERVER_8",
+      "processType": "mongod",
+      "version": "2.6.7",
+      "hostname": "SERVER-8",
+      "logRotate": {
+        "sizeThresholdMB": 1000,
+        "timeThresholdHrs": 24
+      },
+      "authSchemaVersion": 1,
+      "args2_6": {
+        "net": {
+          "port": 27019
+        },
+        "storage": {
+          "dbPath": "/data/MyCLUSTER_MyCONFIG_SERVER_8"
+        },
+        "systemLog": {
+          "path": "/data/MyCLUSTER_MyCONFIG_SERVER_8/mongodb.log",
+          "destination": "file"
+        },
+        "sharding": {
+          "clusterRole": "configsvr"
+        },
+        "operationProfiling": {}
+      }
+    },
+    {
+      "name": "MyCLUSTER_MyMONGOS_9",
+      "processType": "mongos",
+      "version": "2.6.7",
+      "hostname": "SERVER-9",
+      "cluster": "myShardedCluster",
+      "logRotate": {
+        "sizeThresholdMB": 1000,
+        "timeThresholdHrs": 24
+      },
+      "authSchemaVersion": 1,
+      "args2_6": {
+        "net": {
+          "port": 27017
+        },
+        "systemLog": {
+          "path": "/data/MyCLUSTER_MyMONGOS_9/mongodb.log",
+          "destination": "file"
+        },
+        "operationProfiling": {}
+      }
+    }
+  ],
+  "replicaSets": [
+    {
+      "_id": "MySHARD_0",
+      "members": [
+        {
+          "_id": 0,
+          "host": "MyCLUSTER_MySHARD_0_0",
+          "priority": 1,
+          "votes": 1,
+          "slaveDelay": 0,
+          "hidden": false,
+          "arbiterOnly": false
+        },
+        {
+          "_id": 1,
+          "host": "MyCLUSTER_MySHARD_0_1",
+          "priority": 1,
+          "votes": 1,
+          "slaveDelay": 0,
+          "hidden": false,
+          "arbiterOnly": false
+        },
+        {
+          "_id": 2,
+          "host": "MyCLUSTER_MySHARD_0_2",
+          "priority": 1,
+          "votes": 1,
+          "slaveDelay": 0,
+          "hidden": false,
+          "arbiterOnly": false
+        }
+      ]
+    },
+    {
+      "_id": "MySHARD_1",
+      "members": [
+        {
+          "_id": 0,
+          "host": "MyCLUSTER_MySHARD_1_3",
+          "priority": 1,
+          "votes": 1,
+          "slaveDelay": 0,
+          "hidden": false,
+          "arbiterOnly": false
+        },
+        {
+          "_id": 1,
+          "host": "MyCLUSTER_MySHARD_1_4",
+          "priority": 1,
+          "votes": 1,
+          "slaveDelay": 0,
+          "hidden": false,
+          "arbiterOnly": false
+        },
+        {
+          "_id": 2,
+          "host": "MyCLUSTER_MySHARD_1_5",
+          "priority": 1,
+          "votes": 1,
+          "slaveDelay": 0,
+          "hidden": false,
+          "arbiterOnly": false
+        }
+      ]
+    }
+  ],
+  "sharding": [
+    {
+      "name": "myShardedCluster",
+      "configServer": [
+        "MyCLUSTER_MyCONFIG_SERVER_6",
+        "MyCLUSTER_MyCONFIG_SERVER_7",
+        "MyCLUSTER_MyCONFIG_SERVER_8"
+      ],
+      "shards": [
+        {
+          "_id": "MySHARD_0",
+          "rs": "MySHARD_0"
+        },
+        {
+          "_id": "MySHARD_1",
+          "rs": "MySHARD_1"
+        }
+      ],
+      "collections": []
+    }
+  ],
+  "mongoDbVersions": [
+    {"name": "2.4.12"},
+    {"name": "2.6.7"}
+  ]
+}

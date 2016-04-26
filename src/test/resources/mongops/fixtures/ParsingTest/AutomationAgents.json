@@ -1,0 +1,26 @@
+{
+  "links" : [ {
+    "href" : "http://mongo-ops-host.some-domain.com/api/public/v1.0/groups/GROUP_ID/agents/AUTOMATION?pretty=true&pageNum=1&itemsPerPage=100",
+    "rel" : "self"
+  } ],
+  "results" : [ {
+    "confCount" : 75,
+    "hostname" : "example-1",
+    "lastConf" : "2015-11-16T19:33:44Z",
+    "stateName" : "NO_PROCESSES",
+    "typeName" : "AUTOMATION"
+  }, {
+    "confCount" : 74,
+    "hostname" : "example-2",
+    "lastConf" : "2015-11-16T19:33:36Z",
+    "stateName" : "NO_PROCESSES",
+    "typeName" : "AUTOMATION"
+  }, {
+    "confCount" : 74,
+    "hostname" : "example-3",
+    "lastConf" : "2015-11-16T19:33:37Z",
+    "stateName" : "NO_PROCESSES",
+    "typeName" : "AUTOMATION"
+  } ],
+  "totalCount" : 3
+}

@@ -1,0 +1,77 @@
+'{'
+  "goalVersion":11,
+  "processes":[
+    '{'
+      "hostname":"mongo-agent-az1-medium-dead1.localdomain",
+      "lastGoalVersionAchieved":5,
+      "name":"dead_0",
+      "plan":[
+
+      ]
+    '}',
+    '{'
+      "hostname":"mongo-agent-az1-medium-dead2.localdomain",
+      "lastGoalVersionAchieved":6,
+      "name":"dead_1",
+      "plan":[
+
+      ]
+    '}',
+    '{'
+      "hostname":"mongo-agent-az2-medium-dead3.localdomain",
+      "lastGoalVersionAchieved":6,
+      "name":"daed_2",
+      "plan":[
+
+      ]
+    '}',
+    '{'
+      "hostname":"mongo-agent-az1-medium-3.localdomain",
+      "lastGoalVersionAchieved":10,
+      "name":"MongoDB_Instance_1_0",
+      "plan":[
+
+      ]
+    '}',
+    '{'
+      "hostname":"mongo-agent-az2-medium-1.localdomain",
+      "lastGoalVersionAchieved":10,
+      "name":"{0}_0",
+      "plan":[
+
+      ]
+    '}',
+    '{'
+      "hostname":"mongo-agent-az2-medium-2.localdomain",
+      "lastGoalVersionAchieved":10,
+      "name":"MongoDB_Instance_1_1",
+      "plan":[
+
+      ]
+    '}',
+    '{'
+      "hostname":"mongo-agent-az1-medium-1.localdomain",
+      "lastGoalVersionAchieved":10,
+      "name":"MongoDB_Instance_1_2",
+      "plan":[
+
+      ]
+    '}',
+    '{'
+      "hostname":"mongo-agent-az2-medium-3.localdomain",
+      "lastGoalVersionAchieved":10,
+      "name":"{0}_1",
+      "plan":[
+
+      ]
+    '}',
+    '{'
+      "hostname":"mongo-agent-az1-medium-2.localdomain",
+      "lastGoalVersionAchieved":10,
+      "name":"{0}_2",
+      "plan":[
+
+      ]
+    '}'
+  ]
+'}'
