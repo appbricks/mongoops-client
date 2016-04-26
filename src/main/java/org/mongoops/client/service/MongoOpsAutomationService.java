@@ -27,9 +27,12 @@ public class MongoOpsAutomationService {
 
     private static final Log log = LogFactory.getLog(MongoOpsAutomationService.class);
 
+    @Autowired
     private EmailAlertService emailAlertService;
-
+    @Autowired
     private MongoOpsClientService clientService;
+
+    @Autowired(required = false)
     private MongoAgentRegistry agentRegistry;
 
     private String dbAdminUser;
@@ -51,15 +54,10 @@ public class MongoOpsAutomationService {
 
     @Autowired
     public MongoOpsAutomationService(
-        EmailAlertService emailAlertService,
-        MongoOpsClientService clientService,
-        MongoAgentRegistry agentRegistry,
-        String mongoOpsDbAdminUser, String mongoOpsDbAdminPassword,
+        String mongoOpsDbAdminUser,
+        String mongoOpsDbAdminPassword,
         @Value("${automation.nodeAzPattern:}") String nodeAzPattern ) {
 
-        this.emailAlertService = emailAlertService;
-        this.clientService = clientService;
-        this.agentRegistry = agentRegistry;
         this.dbAdminUser = mongoOpsDbAdminUser;
         this.dbAdminPassword = mongoOpsDbAdminPassword;
 
