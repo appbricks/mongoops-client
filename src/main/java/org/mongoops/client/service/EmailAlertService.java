@@ -28,9 +28,9 @@ public class EmailAlertService {
 
     @Value("${mongodb.replicaset.alert.email.toEmail:}")
     private String alertToEmail;
-    @Value("${mongodb.replicaset.alert.email.fromEmail:service-broker@mongodb-dedicated.service}")
+    @Value("${mongodb.replicaset.alert.email.fromEmail:mongoops@mongodb.service}")
     private String alertFromEmail;
-    @Value("${mongodb.replicaset.alert.replyToEmail:no_reply@mongodb-dedicated.service}")
+    @Value("${mongodb.replicaset.alert.replyToEmail:no_reply@mongodb.service}")
     private String alertReplyToEmail;
 
     public void sendMessage(String subjectKey, String bodyKey, Object... args) {
