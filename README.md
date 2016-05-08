@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This library implements a Java client API for interacting with the [MongoDB Ops Manager](https://www.mongodb.com/products/ops-manager) automation server. Apart from providing a Java facade for the MongoDB Ops Manager REST API, it also provides a class for managing and orchestration MongoDB replicasets/clusters.
+This library implements a Java client API for interacting with the [MongoDB Ops Manager](https://www.mongodb.com/products/ops-manager) automation server. Apart from providing a Java facade for the MongoDB Ops Manager [REST API](https://docs.opsmanager.mongodb.com/current/api/), it also provides a class for managing and orchestration MongoDB replicasets/clusters.
 
 ## Technical Overview
 
